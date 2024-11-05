@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Expanding the Scope: Inductive Knowledge Graph Reasoning with Multi-Starting Progressive Propagation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Zhoutian</forename><surname>Shao</surname></persName>
+							<idno type="ORCID">0009-0003-6277-268X</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yuanning</forename><surname>Cui</surname></persName>
+							<idno type="ORCID">0000-0002-9113-0155</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wei</forename><surname>Hu</surname></persName>
+							<idno type="ORCID">0000-0003-3635-6335</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">National Institute of Healthcare Data Science</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210093</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Expanding the Scope: Inductive Knowledge Graph Reasoning with Multi-Starting Progressive Propagation</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">26ADB6378B300A454410B0FCAFD95644</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1" ident="GROBID" when="2024-10-30T14:25+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Knowledge graphs</term>
+					<term>Inductive reasoning</term>
+					<term>Conditional message passing</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Knowledge graphs (KGs) are widely acknowledged as incomplete, and new entities are constantly emerging in the real world. Inductive KG reasoning aims to predict missing facts for these new entities. Among existing models, graph neural networks (GNNs) based ones have shown promising performance for this task. However, they are still challenged by inefficient message propagation due to the distance and scalability issues. In this paper, we propose a new inductive KG reasoning model, MStar, by leveraging conditional message passing neural networks (C-MPNNs). Our key insight is to select multiple query-specific starting entities to expand the scope of progressive propagation. To propagate query-related messages to a farther area within limited steps, we subsequently design a highway layer to propagate information toward these selected starting entities. Moreover, we introduce a training strategy called LinkVerify to mitigate the impact of noisy training samples. Experimental results validate that MStar achieves superior performance compared with state-of-the-art models, especially for distant entities.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

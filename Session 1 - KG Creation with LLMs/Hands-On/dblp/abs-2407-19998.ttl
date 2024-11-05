@@ -1,0 +1,73 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix bibtex: <http://purl.org/net/nknouf/ns/bibtex#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix litre: <http://purl.org/spar/literal/> .
+@prefix locid: <http://id.loc.gov/vocabulary/identifiers/> .
+@prefix locrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix schema: <https://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix dblp: <https://dblp.org/rdf/schema#> .
+
+<https://dblp.org/rec/journals/corr/abs-2407-19998>
+	owl:sameAs <https://doi.org/10.48550/ARXIV.2407.19998>, <http://dx.doi.org/10.48550/ARXIV.2407.19998> ;
+	rdfs:label "Huu Tan Mai et al.: Do LLMs Really Adapt to Domains? An Ontology Learning Perspective. (2024)" ;
+	dblp:doi <https://doi.org/10.48550/ARXIV.2407.19998> ;
+	datacite:hasIdentifier [
+		datacite:usesIdentifierScheme datacite:dblp-record ;
+		litre:hasLiteralValue "journals/corr/abs-2407-19998" ;
+		a datacite:ResourceIdentifier, datacite:Identifier
+	], [
+		datacite:usesIdentifierScheme datacite:doi ;
+		litre:hasLiteralValue "10.48550/ARXIV.2407.19998" ;
+		a datacite:ResourceIdentifier, datacite:Identifier
+	] ;
+	dblp:title "Do LLMs Really Adapt to Domains? An Ontology Learning Perspective." ;
+	dblp:bibtexType bibtex:Article ;
+	dblp:authoredBy <https://dblp.org/pid/367/5185>, <https://dblp.org/pid/198/3329>, <https://dblp.org/pid/39/4064> ;
+	dblp:createdBy <https://dblp.org/pid/367/5185>, <https://dblp.org/pid/198/3329>, <https://dblp.org/pid/39/4064> ;
+	dblp:numberOfCreators 3 ;
+	dblp:hasSignature [
+		dblp:signatureDblpName "Huu Tan Mai" ;
+		dblp:signatureCreator <https://dblp.org/pid/367/5185> ;
+		dblp:signatureOrdinal 1 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2407-19998> ;
+		a dblp:AuthorSignature, dblp:Signature
+	], [
+		dblp:signatureDblpName "Cuong Xuan Chu" ;
+		dblp:signatureCreator <https://dblp.org/pid/198/3329> ;
+		dblp:signatureOrdinal 2 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2407-19998> ;
+		a dblp:AuthorSignature, dblp:Signature
+	], [
+		dblp:signatureDblpName "Heiko Paulheim" ;
+		dblp:signatureCreator <https://dblp.org/pid/39/4064> ;
+		dblp:signatureOrdinal 3 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2407-19998> ;
+		a dblp:AuthorSignature, dblp:Signature
+	] ;
+	dblp:primaryDocumentPage <https://doi.org/10.48550/ARXIV.2407.19998> ;
+	dblp:documentPage <https://doi.org/10.48550/ARXIV.2407.19998> ;
+	dblp:listedOnTocPage <https://dblp.org/db/journals/corr/corr2407> ;
+	dblp:publishedInStream <https://dblp.org/streams/journals/corr> ;
+	dblp:publishedIn "CoRR" ;
+	dblp:publishedInJournal "CoRR" ;
+	dblp:publishedInJournalVolume "abs/2407.19998" ;
+	dblp:yearOfPublication "2024"^^<http://www.w3.org/2001/XMLSchema#gYear> ;
+	a dblp:Publication, dblp:Informal .
+<https://dblp.org/rec/journals/corr/abs-2407-19998.ttl>
+	rdfs:label "provenance information for RDF data of dblp record 'journals/corr/abs-2407-19998'" ;
+	dct:creator <https://dblp.org> ;
+	dct:isPartOf <https://dblp.org/rdf/dblp.ttl> ;
+	dct:modified "2024-08-21T20:53:19+0200" ;
+	dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .

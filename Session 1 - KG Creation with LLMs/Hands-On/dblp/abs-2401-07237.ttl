@@ -1,0 +1,86 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix bibtex: <http://purl.org/net/nknouf/ns/bibtex#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix litre: <http://purl.org/spar/literal/> .
+@prefix locid: <http://id.loc.gov/vocabulary/identifiers/> .
+@prefix locrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix schema: <https://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix dblp: <https://dblp.org/rdf/schema#> .
+
+<https://dblp.org/rec/journals/corr/abs-2401-07237>
+	owl:sameAs <https://doi.org/10.48550/ARXIV.2401.07237>, <http://dx.doi.org/10.48550/ARXIV.2401.07237> ;
+	rdfs:label "Somin Wadhwa et al.: Distilling Event Sequence Knowledge From Large Language Models. (2024)" ;
+	dblp:doi <https://doi.org/10.48550/ARXIV.2401.07237> ;
+	datacite:hasIdentifier [
+		datacite:usesIdentifierScheme datacite:dblp-record ;
+		litre:hasLiteralValue "journals/corr/abs-2401-07237" ;
+		a datacite:ResourceIdentifier, datacite:Identifier
+	], [
+		datacite:usesIdentifierScheme datacite:doi ;
+		litre:hasLiteralValue "10.48550/ARXIV.2401.07237" ;
+		a datacite:ResourceIdentifier, datacite:Identifier
+	] ;
+	dblp:title "Distilling Event Sequence Knowledge From Large Language Models." ;
+	dblp:bibtexType bibtex:Article ;
+	dblp:authoredBy <https://dblp.org/pid/265/5925>, <https://dblp.org/pid/h/OktieHassanzadeh>, <https://dblp.org/pid/98/5604>, <https://dblp.org/pid/b/KenBarker2>, <https://dblp.org/pid/75/2470> ;
+	dblp:createdBy <https://dblp.org/pid/265/5925>, <https://dblp.org/pid/h/OktieHassanzadeh>, <https://dblp.org/pid/98/5604>, <https://dblp.org/pid/b/KenBarker2>, <https://dblp.org/pid/75/2470> ;
+	dblp:numberOfCreators 5 ;
+	dblp:hasSignature [
+		dblp:signatureDblpName "Somin Wadhwa" ;
+		dblp:signatureCreator <https://dblp.org/pid/265/5925> ;
+		dblp:signatureOrdinal 1 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2401-07237> ;
+		a dblp:AuthorSignature, dblp:Signature
+	], [
+		dblp:signatureDblpName "Oktie Hassanzadeh" ;
+		dblp:signatureCreator <https://dblp.org/pid/h/OktieHassanzadeh> ;
+		dblp:signatureOrcid <https://orcid.org/0000-0001-5307-9857> ;
+		dblp:signatureOrdinal 2 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2401-07237> ;
+		a dblp:AuthorSignature, dblp:Signature
+	], [
+		dblp:signatureDblpName "Debarun Bhattacharjya" ;
+		dblp:signatureCreator <https://dblp.org/pid/98/5604> ;
+		dblp:signatureOrdinal 3 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2401-07237> ;
+		a dblp:AuthorSignature, dblp:Signature
+	], [
+		dblp:signatureDblpName "Ken Barker 0002" ;
+		dblp:signatureCreator <https://dblp.org/pid/b/KenBarker2> ;
+		dblp:signatureOrdinal 4 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2401-07237> ;
+		a dblp:AuthorSignature, dblp:Signature
+	], [
+		dblp:signatureDblpName "Jian Ni" ;
+		dblp:signatureCreator <https://dblp.org/pid/75/2470> ;
+		dblp:signatureOrdinal 5 ;
+		dblp:signaturePublication <https://dblp.org/rec/journals/corr/abs-2401-07237> ;
+		a dblp:AuthorSignature, dblp:Signature
+	] ;
+	dblp:primaryDocumentPage <https://doi.org/10.48550/ARXIV.2401.07237> ;
+	dblp:documentPage <https://doi.org/10.48550/ARXIV.2401.07237> ;
+	dblp:listedOnTocPage <https://dblp.org/db/journals/corr/corr2401> ;
+	dblp:publishedInStream <https://dblp.org/streams/journals/corr> ;
+	dblp:publishedIn "CoRR" ;
+	dblp:publishedInJournal "CoRR" ;
+	dblp:publishedInJournalVolume "abs/2401.07237" ;
+	dblp:yearOfPublication "2024"^^<http://www.w3.org/2001/XMLSchema#gYear> ;
+	a dblp:Publication, dblp:Informal .
+<https://dblp.org/rec/journals/corr/abs-2401-07237.ttl>
+	rdfs:label "provenance information for RDF data of dblp record 'journals/corr/abs-2401-07237'" ;
+	dct:creator <https://dblp.org> ;
+	dct:isPartOf <https://dblp.org/rdf/dblp.ttl> ;
+	dct:modified "2024-10-06T21:24:37+0200" ;
+	dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .

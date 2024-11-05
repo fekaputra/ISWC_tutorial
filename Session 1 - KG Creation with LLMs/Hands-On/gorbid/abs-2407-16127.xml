@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Finetuning Generative Large Language Models with Discrimination Instructions for Knowledge Graph Completion</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2024-07-23">23 Jul 2024</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Yang</forename><surname>Liu</surname></persName>
+							<idno type="ORCID">0000-0002-4663-2439</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaobin</forename><surname>Tian</surname></persName>
+							<idno type="ORCID">0000-0001-6570-6424</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zequn</forename><surname>Sun</surname></persName>
+							<idno type="ORCID">0000-0001-6570-6424</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wei</forename><surname>Hu</surname></persName>
+							<idno type="ORCID">0000-0003-3635-6335</idno>
+							<affiliation key="aff0">
+								<orgName type="laboratory">State Key Laboratory for Novel Software Technology</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210023</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">National Institute of Healthcare Data Science</orgName>
+								<orgName type="institution">Nanjing University</orgName>
+								<address>
+									<postCode>210093</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Finetuning Generative Large Language Models with Discrimination Instructions for Knowledge Graph Completion</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2024-07-23">23 Jul 2024</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">40654517ECFCAFBEED84CED4E874FAFF</idno>
+					<idno type="arXiv">arXiv:2407.16127v1[cs.CL]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1" ident="GROBID" when="2024-10-30T14:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Knowledge graph completion</term>
+					<term>Large language model</term>
+					<term>Instruction tuning</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Traditional knowledge graph (KG) completion models learn embeddings to predict missing facts. Recent works attempt to complete KGs in a text-generation manner with large language models (LLMs). However, they need to ground the output of LLMs to KG entities, which inevitably brings errors. In this paper, we present a finetuning framework, DIFT, aiming to unleash the KG completion ability of LLMs and avoid grounding errors. Given an incomplete fact, DIFT employs a lightweight model to obtain candidate entities and finetunes an LLM with discrimination instructions to select the correct one from the given candidates. To improve performance while reducing instruction data, DIFT uses a truncated sampling method to select useful facts for finetuning and injects KG embeddings into the LLM. Extensive experiments on benchmark datasets demonstrate the effectiveness of our proposed framework.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

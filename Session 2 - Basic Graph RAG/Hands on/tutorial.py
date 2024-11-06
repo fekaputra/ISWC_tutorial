@@ -41,15 +41,15 @@ chain = GraphSparqlQAChain.from_llm(
 
 """# Basic Query"""
 
-instruction = ""
+instruction = "ADDITIONAL INSTRUCTION: When you make the final query, remove these ``` quotes and only have the query \n"
 query = "QUERY: Where was barak obama born?"
 prompt = instruction + query
 print(prompt)
 
 print(chain.run(prompt))
 
-instruction = ""
-query = "QUERY: How many children did barak have and also name them?"
+instruction = "ADDITIONAL INSTRUCTION: When you make the final query, remove these ``` quotes and only have the query \n"
+query = "QUERY: How many children did Barak Obama have and also name them?"
 prompt = instruction + query
 print(prompt)
 print(chain.run(prompt))
@@ -92,7 +92,13 @@ print(chain.run(prompt))
 """
 
 instruction = "ADDITIONAL INSTRUCTION: When you make the final query, remove these ``` quotes and only have the query \n"
-query = "QUERY:Number of cars audi has given to barak obama?"
+query = "QUERY:Number of cars audi has given to Barak obama?"
+prompt = instruction + query
+print(prompt)
+print(chain.run(prompt))
+
+instruction = "ADDITIONAL INSTRUCTION: When you make the final query, remove these ``` quotes and only have the query \n"
+query = "QUERY:Which is the largest Ocean in the world?"
 prompt = instruction + query
 print(prompt)
 print(chain.run(prompt))

@@ -12,6 +12,8 @@ from langchain_core.callbacks import CallbackManagerForChainRun
 from langchain_core.language_models import BaseLanguageModel
 from langchain_core.prompts.base import BasePromptTemplate
 from pydantic import Field
+from get_entities_relations import ask_question
+from execute_sparql import query_sparql, get_entity_details, get_relation_details, extract_label_values
 
 from prompt import (
     SPARQL_GENERATION_SELECT_PROMPT,
@@ -129,6 +131,7 @@ class GraphSparqlQAChain(Chain):
         Generate SPARQL query, use it to retrieve a response from the gdb and answer
         the question.
         """
+
         _run_manager = run_manager or CallbackManagerForChainRun.get_noop_manager()
         callbacks = _run_manager.get_child()
         prompt = inputs[self.input_key]
@@ -150,9 +153,20 @@ class GraphSparqlQAChain(Chain):
 
         _run_manager.on_text("Identified intent:", end="\n", verbose=self.verbose)
         _run_manager.on_text(intent, color="green", end="\n", verbose=self.verbose)
+        ss = self.graph.get_schema
+
+
+        all_entites_relations = ask_question(prompt)
+        entites = str(get_entity_details(all_entites_relations['entities_wikidata']))
+        relations = str(get_relation_details(all_entites_relations['relations_wikidata']))
+        new_schema = "ENTITIES: " + entites + "\n" + "RELATIONS: " + relations
+        print("NEW SCHEMA: ",new_schema)
+
+
+
 
         generated_sparql = sparql_generation_chain.run(
-            {"prompt": prompt, "schema": self.graph.get_schema}, callbacks=callbacks
+            {"prompt": prompt, "schema": new_schema}, callbacks=callbacks
         )
 
         _run_manager.on_text("Generated SPARQL:", end="\n", verbose=self.verbose)
@@ -160,15 +174,17 @@ class GraphSparqlQAChain(Chain):
             generated_sparql, color="green", end="\n", verbose=self.verbose
         )
 
+
         if intent == "SELECT":
-            context = self.graph.query(generated_sparql)
+            #context = self.graph.query(generated_sparql)
+            context = extract_label_values(query_sparql(generated_sparql))
+            
 
             _run_manager.on_text("Full Context:", end="\n", verbose=self.verbose)
             _run_manager.on_text(
                 str(context), color="green", end="\n", verbose=self.verbose
             )
-            print("Context >>>>>>>>> ",context)
-            print("PROMPT >>>>>>>> ",prompt)
+
             result = self.qa_chain(
                 {"prompt": prompt, "context": context},
                 callbacks=callbacks,

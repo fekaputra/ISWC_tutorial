@@ -5,10 +5,10 @@ This repository provides a structured learning path for building Knowledge Graph
 ## Repository Structure
 
 - **[Dataset](./dataset)**: Contains data files used across the sessions.
-- **[Session 1 - KG Creation with LLMs](./Session%201%20-%20KG%20Creation%20with%20LLMs)**: This session focuses on using LLMs for creating knowledge graphs.
-- **[Session 2 - Basic Graph RAG](./Session%202%20-%20Basic%20Graph%20RAG)**: Introduces basic concepts of Graph RAG, setting the foundation for more advanced methods.
-- **[Session 3 - Advanced Graph RAG](./Session%203%20-%20Advanced%20Graph%20RAG)**: Delves into advanced techniques and optimizations for Graph RAG.
-- **[Session 4 - Fine Tuning](./Session%204%20-%20Fine%20Tuning)**: Covers methods for fine-tuning models to improve RAG performance.
+- **[Session 1 - KG Creation with LLMs](./session-1)**: This session focuses on using LLMs for creating knowledge graphs.
+- **[Session 2 - Basic Graph RAG](./session-2)**: Introduces basic concepts of Graph RAG, setting the foundation for more advanced methods.
+- **[Session 3 - Advanced Graph RAG](./session-3)**: Delves into advanced techniques and optimizations for Graph RAG.
+- **[Session 4 - Fine Tuning](./session-4)**: Covers methods for fine-tuning models to improve RAG performance.
 
 ## Getting Started
 

@@ -19,34 +19,71 @@ SPARQL_INTENT_PROMPT = PromptTemplate(
 )
 
 SPARQL_GENERATION_SELECT_TEMPLATE = """Task: Generate a SPARQL SELECT statement for querying a graph database.
-For instance, question: Where was barak obama born?
-For instance, question: What is the name of the Belgrade Airport ?
+For instance, question: What is the mascot of Georgetown University? The following is the query. 
 ```
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
-SELECT DISTINCT ?sbj ?sbjLabel WHERE {{
-  ?sbj wdt:P931 wd:Q3711 .
-  ?sbj wdt:P31 wd:Q1248784 .
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }}
-}}
-```
-```
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-SELECT ?birthPlace ?birthPlaceLabel ?birthPlaceDescription
+SELECT ?mascot ?mascotLabel
 WHERE {{
-    wd:Q76 wdt:P19 ?birthPlace .  # Retrieves the birthplace of Barack Obama
-    SERVICE wikibase:label {{                  #This ensures that the answer is in human readable for at all times
-      bd:serviceParam wikibase:language [AUTO_LANGUAGE],en"  # Ensures labels and descriptions are in English
+    wd:Q333886 wdt:P822 ?mascot .
+    SERVICE wikibase:label {{
+        bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en"
     }}
 }}
+The ENTITIES and RELATIONS provided are 
+ENTITIES: [{{'URI': 'http://www.wikidata.org/entity/Q333886', 'about': 'Georgetown University - private university in Washington, D.C., United States'}}, {{'URI': 'http://www.wikidata.org/entity/Q333886', 'about': 'Georgetown University - private university in Washington, D.C., United States'}}, {{'URI': 'http://www.wikidata.org/entity/Q5547055', 'about': 'MedStar Georgetown University Hospital - hospital in Washington, D.C.'}}]
+RELATIONS: [{{'URI': 'http://www.wikidata.org/entity/P822', 'about': 'mascot - mascot of an organization, e.g. a sports team or university'}}, {{'URI': 'http://www.wikidata.org/entity/P7033', 'about': 'Australian Educational Vocabulary ID - ID for curriculum term in one of the controlled vocabularies at Australian education vocabularies'}}]
+Identify the Entity:
+From the entities provided, Q333886 (Georgetown University) is chosen because it directly corresponds to the question.
+
+Select the Relation:
+From the relations provided, P822 (mascot) is selected as it is relevant to finding the mascot of an organization like a university.
+
+Construct the Query:
+The query specifies that for entity Q333886, retrieve the value associated with property P822 (mascot) and assign it to the variable ?mascot.
+
+Add Labels for Readability:
+The SERVICE wikibase:label block fetches the name of the mascot in a readable format, in English or the user's language.
+
+Output:
+The query returns the mascot entity and its readable label, effectively answering the question.
 ```
 
+For instance, question: Is the wingspan of the Andean Condor equal to 3.048?
+```
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+ASK WHERE {{ wd:Q170598 wdt:P2050 ?obj filter(?obj = 3.048) }} 
+```
+ENTITIES: [{{'URI': 'http://www.wikidata.org/entity/Q36171706', 'about': 'Repeated conservation threats across the Americas: High levels of blood and bone lead in the Andean Condor widen the problem to a continental scale - scientific article'}}]
+RELATIONS: [{{'URI': 'http://www.wikidata.org/entity/P2050', 'about': 'wingspan - distance from one wingtip to the other, of an airplane or an animal'}}]
+Here’s a step-by-step explanation for the query:
+
+Identify the Entity:
+The entity Q170598 represents the Andean Condor, so the query focuses on information about this bird.
+
+Select the Relation:
+The property P2050 (wingspan) is used to retrieve the wingspan of the Andean Condor.
+
+Construct the Query:
+The query checks whether the wingspan value (?obj) of the Andean Condor matches 3.048 (meters).
+
+Use ASK Query Type:
+The ASK query type returns a true or false result, depending on whether the specified condition is satisfied.
+
+Output:
+The query will return:
+
+true if the wingspan of the Andean Condor is indeed 3.048 meters.
+false otherwise.
+This query directly answers the question by verifying if the given wingspan value matches the specified number.
+
 Instructions:
-Construct the query by only using the entites given in ENTITIES and realtions given in RELATIONS from the Schema. In case of multiple entites and relations use what is the closest. But use only one each.Donot use any other information to build the query.
-Also, ensure to include the two lines of the query whihc ensures that the answer is in human readable form and also is in english at all times.
+1.Identify the type of query it closely resembles by useing the above two examples.
+2.Construct the query by only using the entites given in ENTITIES and realtions given in RELATIONS from the Schema. In case of multiple entites and relations use what is the closest. But use only one each.Donot use any other information to build the query. Please donot include the word QUERY in the final query
+3.Also, ensure to include the two lines of the query which ensures that the answer is in human readable form and also is in english at all times.
 Schema:
 {schema}
 Note: Be as concise as possible.
@@ -97,7 +134,7 @@ Information:
 {context}
 
 Question: {prompt}
-MOST IMPORTANT: ONLY USE INFORAMTION FROM "Information" KEY above, if it is empty, just say: SORRY
+MOST IMPORTANT: ONLY USE INFORAMTION FROM "Information" KEY above to answer and include all the information from the "Information" KEY
 Helpful Answer:"""
 SPARQL_QA_PROMPT = PromptTemplate(
     input_variables=["context", "prompt"], template=SPARQL_QA_TEMPLATE

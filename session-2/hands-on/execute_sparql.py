@@ -90,8 +90,15 @@ def get_relation_details(relations):
     
     return relations
 def extract_label_values(data):
+    print('data >>> ', data)
+    
+    # Case 1: Handle input with the 'boolean' key
+    if 'boolean' in data:
+        return str(data['boolean'])  # Convert boolean value to string and return
+    
+    # Case 2: Handle input with 'head' and 'results'
     # Identify the label key dynamically from the 'vars' list in the 'head' section
-    label_key = next((var for var in data['head']['vars'] if var.endswith('Label')), None)
+    label_key = next((var for var in data['head'].get('vars', []) if var.endswith('Label')), None)
     
     # Initialize an empty list to store the label values
     answer = []
@@ -99,12 +106,13 @@ def extract_label_values(data):
     # Check if the label key exists
     if label_key:
         # Iterate over each binding in the results
-        for item in data['results']['bindings']:
+        for item in data.get('results', {}).get('bindings', []):
             # Check if the label key exists in the current item and add its value to the answer list
             if label_key in item:
                 answer.append(item[label_key]['value'])
     
     return answer
+
 #sparql_query = """
 #SELECT ?birthPlace ?birthPlaceLabel ?birthPlaceDescription
 #WHERE {

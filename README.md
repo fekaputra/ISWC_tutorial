@@ -4,7 +4,6 @@ This repository provides a structured learning path for building Knowledge Graph
 
 ## Repository Structure
 
-- **[Dataset](./dataset)**: Contains data files used across the sessions.
 - **[Session 1 - KG Creation with LLMs](./session-1)**: This session focuses on using LLMs for creating knowledge graphs.
 - **[Session 2 - Basic Graph RAG](./session-2)**: Introduces basic concepts of Graph RAG, setting the foundation for more advanced methods.
 - **[Session 3 - Advanced Graph RAG](./session-3)**: Delves into advanced techniques and optimizations for Graph RAG.

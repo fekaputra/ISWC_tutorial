@@ -2,7 +2,6 @@ transformers
 torch
 datasets
 peft
-python-dotenv
 trl
 bitsandbytes
 tensorboard

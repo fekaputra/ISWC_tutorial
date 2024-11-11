@@ -36,5 +36,8 @@ You have two options for running this repository:
 - Ensure you have Jupyter Notebook installed so you can run the notebooks locally.
 - Additionally, install GPU-compatible libraries (e.g., CUDA and cuDNN.
 
+### 3. OpenAI API Key
+- You need an OpenAI API Key. For the ISWC 2024 Tutorial, we will share the key in this [document](https://docs.google.com/document/d/1aoYihC6g0atDJDq7-UieDHIpJvBcvFQ-o2UPuukwGQA/edit?usp=sharing).
+
 
 

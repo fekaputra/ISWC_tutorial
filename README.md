@@ -1,6 +1,6 @@
 # Knowledge Graph & Graph Retrieval-Augmented Generation (RAG) Repository
 
-This repository provides a structured learning path for building Knowledge Graphs (KG) and Graph RAG systems using Large Language Models (LLMs) and advanced graph-based techniques. It is divided into sessions, each focusing on different stages of the KG and RAG creation and fine-tuning process. 
+This repository provides a structured learning path for building Knowledge Graphs (KG) and Graph RAG systems using Large Language Models (LLMs) and advanced graph-based techniques. It is divided into sessions, each focusing on different stages of the KG and RAG creation and fine-tuning process. Link to [OpenAI key](https://docs.google.com/document/d/1aoYihC6g0atDJDq7-UieDHIpJvBcvFQ-o2UPuukwGQA/edit?usp=sharing)
 
 ## Repository Structure
 

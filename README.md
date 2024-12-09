@@ -39,5 +39,8 @@ You have two options for running this repository:
 ### 3. OpenAI API Key
 - You need an OpenAI API Key. For the ISWC 2024 Tutorial, we will share the key in this [document](https://docs.google.com/document/d/1aoYihC6g0atDJDq7-UieDHIpJvBcvFQ-o2UPuukwGQA/edit?usp=sharing).
 
+![License: CC BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-blue.svg)
+
+
 
 
